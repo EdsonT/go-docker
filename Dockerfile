@@ -7,7 +7,7 @@ COPY . .
 RUN go get -u github.com/gin-gonic/gin
 RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/test ./main.go
 
-FROM buster
+FROM debian:buster
 RUN apt-get install ca-certificates && \
     apt-get clean;
 WORKDIR /usr/bin
