@@ -1,16 +1,16 @@
-package go_docker
+package main
 
 import "github.com/gin-gonic/gin"
 
 func main()  {
 	gin.ForceConsoleColor()
 	router := gin.Default()
-	router.GET("/", func(c *gin.Context) {
+	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(200,gin.H{
 			"message":"pong",
 		})
 		
 	})
-	router.Run("8080")
+	router.Run(":8080")
 	
 }
